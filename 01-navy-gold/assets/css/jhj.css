@@ -1,0 +1,819 @@
+/*!
+ * jhj.css — 법무법인 집현전 의료전문센터 데모 1안(네이비·골드) 전용 추가 스타일
+ * base/components/pages/subpages.css 디자인 시스템은 그대로 두고, 집현전 콘텐츠에만
+ * 필요한 컴포넌트(로고 심볼·면책공고·변호사 카드·업무 페이지 블록)를 여기서 정의한다.
+ * 토큰은 base.css v2 원본만 사용. CSS-first: 초기 hidden은 .js 스코프 안에서만.
+ */
+
+/* ==========================================================================
+   1. 헤더 로고 — 集 심볼 + 2줄 워드마크
+   ========================================================================== */
+.site-header__logo--symbol {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-header__logo--symbol > span:last-child {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+
+.logo-symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--navy-deep);
+  font-family: "Noto Serif KR", "Nanum Myeongjo", "Batang", serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.site-footer__brand {
+  font-family: var(--font-body);
+}
+
+/* ==========================================================================
+   2. 인트로 히어로 — 비디오 대신 정지 이미지 + 느린 줌(켄번즈)
+   ========================================================================== */
+.hero-intro__video--still {
+  animation: heroKenburns 18s ease-in-out infinite alternate;
+  transform-origin: 55% 45%;
+}
+
+@keyframes heroKenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+.hero-intro__title--ko {
+  font-family: var(--font-body);
+  font-size: clamp(34px, 5.6vw, 72px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.hero-intro__title--ko em {
+  font-style: normal;
+  color: var(--accent-light);
+}
+
+.hero-intro__title-en {
+  font-size: clamp(40px, 8vw, 96px);
+  font-weight: 900;
+  line-height: 0.9;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: var(--sp-3);
+}
+
+/* ==========================================================================
+   3. 공통 하단 면책공고 (components.js renderFooter가 푸터 위에 주입)
+   ========================================================================== */
+.disclaimer {
+  position: relative;
+  padding-block: var(--sp-8);
+  background: var(--ghost-soft);
+  border-top: 1px solid var(--line-soft);
+  color: var(--navy-deep);
+}
+
+.disclaimer__inner {
+  text-align: center;
+}
+
+.disclaimer__eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  color: var(--accent-deep);
+  margin-bottom: var(--sp-2);
+}
+
+.disclaimer__title {
+  font-size: var(--fs-h3);
+  margin-bottom: var(--sp-3);
+}
+
+.disclaimer__lead {
+  max-width: 640px;
+  margin-inline: auto;
+  font-size: var(--fs-sm);
+  color: var(--navy);
+  margin-bottom: var(--sp-6);
+}
+
+.disclaimer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  text-align: left;
+}
+
+.disclaimer__item {
+  padding: var(--sp-5);
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-card);
+}
+
+.disclaimer__num {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--accent-deep);
+  margin-bottom: var(--sp-2);
+}
+
+.disclaimer__item h3 {
+  font-size: var(--fs-body);
+  margin-bottom: var(--sp-2);
+}
+
+.disclaimer__item p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink-mute);
+}
+
+@media (max-width: 1024px) {
+  .disclaimer__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .disclaimer__grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   4. 변호사 소개 — 사진 + 이력 카드 (about.html #attorneys)
+   ========================================================================== */
+.atty-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-5);
+}
+
+.atty-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-base) var(--ease-standard),
+    border-color var(--dur-base) var(--ease-standard),
+    box-shadow var(--dur-base) var(--ease-standard);
+}
+
+.atty-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.atty-card--lead {
+  grid-column: 1 / -1;
+  grid-template-columns: 260px 1fr;
+}
+
+.atty-card__media {
+  position: relative;
+  background: var(--navy-deep);
+  min-height: 220px;
+}
+
+.atty-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.atty-card__body {
+  padding: var(--sp-5) var(--sp-6);
+  min-width: 0;
+}
+
+.atty-card__role {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--accent-deep);
+  margin-bottom: var(--sp-1);
+}
+
+.atty-card__name {
+  font-size: var(--fs-h4);
+  margin-bottom: var(--sp-3);
+}
+
+.atty-card__name span {
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--ink-mute);
+  margin-left: var(--sp-2);
+}
+
+.atty-card__lists {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-3);
+}
+
+.atty-card--lead .atty-card__lists {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+
+.atty-card__lists h5 {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  color: var(--accent-deep);
+  margin-bottom: var(--sp-1);
+}
+
+.atty-card__lists li {
+  position: relative;
+  padding-left: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--navy);
+}
+
+.atty-card__lists li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.atty-card__more {
+  margin-top: var(--sp-3);
+}
+
+.atty-card__more summary {
+  cursor: pointer;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--primary);
+  list-style: none;
+}
+
+.atty-card__more summary::after {
+  content: " +";
+}
+
+.atty-card__more[open] summary::after {
+  content: " −";
+}
+
+.atty-card__more ul {
+  margin-top: var(--sp-2);
+}
+
+@media (max-width: 900px) {
+  .atty-grid { grid-template-columns: 1fr; }
+  .atty-card--lead { grid-template-columns: 180px 1fr; }
+  .atty-card--lead .atty-card__lists { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .atty-card, .atty-card--lead { grid-template-columns: 1fr; }
+  .atty-card__media { aspect-ratio: 4 / 3; min-height: 0; }
+  .atty-card__media img { object-position: 50% 20%; }
+}
+
+/* 인덱스 People 섹션: 10인을 5열 2행으로 */
+.people__grid--ten {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.people__card img {
+  object-position: top center;
+}
+
+@media (max-width: 1024px) {
+  .people__grid--ten { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .people__grid--ten { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ==========================================================================
+   5. 업무 페이지 공통 블록 (criminal / license / admin-law / malpractice)
+   ========================================================================== */
+/* 5-1. 정의 블록 — split 레이아웃 위 "~이란 무엇인가요?" 타이틀 */
+.define__title {
+  font-size: var(--fs-h3);
+  margin-bottom: var(--sp-4);
+}
+
+.define__title em {
+  font-style: normal;
+  color: var(--primary);
+}
+
+/* 5-2. 유형 카드 4분할 — 아이콘 + 제목 + 설명 (라이트) */
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+.type-card {
+  padding: var(--sp-6) var(--sp-5);
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-base) var(--ease-standard),
+    border-color var(--dur-base) var(--ease-standard),
+    box-shadow var(--dur-base) var(--ease-standard);
+}
+
+.type-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.type-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(201, 165, 92, 0.18), rgba(228, 210, 166, 0.1));
+  color: var(--accent-deep);
+  margin-bottom: var(--sp-4);
+}
+
+.type-card__icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.type-card h4 {
+  font-size: var(--fs-body);
+  margin-bottom: var(--sp-2);
+  color: var(--navy-deep);
+}
+
+.type-card p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--navy);
+}
+
+/* 다크 섹션 위 글래스 변형 */
+.section--dark .type-card,
+.section--navy .type-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--glass-border-soft);
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+  backdrop-filter: blur(var(--glass-blur-sm));
+  box-shadow: none;
+}
+
+.section--dark .type-card:hover,
+.section--navy .type-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+  box-shadow: var(--glass-shadow);
+}
+
+.section--dark .type-card__icon,
+.section--navy .type-card__icon {
+  background: rgba(201, 165, 92, 0.16);
+  color: var(--accent-light);
+}
+
+.section--dark .type-card h4,
+.section--navy .type-card h4 {
+  color: var(--paper);
+}
+
+.section--dark .type-card p,
+.section--navy .type-card p {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.type-grid--5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .type-grid, .type-grid--5 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .type-grid, .type-grid--5 { grid-template-columns: 1fr; }
+}
+
+/* 5-3. 섹션 리드 문단 (타이틀 아래 설명) */
+.section-lead {
+  max-width: 760px;
+  margin: calc(var(--sp-6) * -1) auto var(--sp-7);
+  text-align: center;
+  color: var(--navy);
+  line-height: var(--lh-loose);
+}
+
+.section-lead--left {
+  margin-inline: 0;
+  text-align: left;
+}
+
+.section--dark .section-lead,
+.section--navy .section-lead {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.section-lead strong {
+  color: var(--accent-deep);
+}
+
+.section--dark .section-lead strong {
+  color: var(--accent-light);
+}
+
+/* 5-4. 강조 밴드 — 배경 사진 + 네이비 스크림 + 좌측 카피 (면허취소 경고 등) */
+.alert-band {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--sp-9);
+  color: var(--paper);
+  background: var(--navy-deep);
+}
+
+.alert-band__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+}
+
+.alert-band__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 12, 36, 0.96) 0%, rgba(0, 12, 36, 0.7) 60%, rgba(0, 12, 36, 0.3) 100%);
+}
+
+.alert-band__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+}
+
+.alert-band__inner h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.25;
+  margin-bottom: var(--sp-4);
+}
+
+.alert-band__inner h2 em {
+  font-style: normal;
+  color: var(--accent-light);
+}
+
+.alert-band__inner p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: var(--lh-loose);
+}
+
+.alert-band__inner p + p {
+  margin-top: var(--sp-3);
+}
+
+.alert-band__inner .btn {
+  margin-top: var(--sp-5);
+}
+
+/* 5-5. 추가 안내 문구 박스 (의사면허 재교부 마약류·성범죄 안내) */
+.note-box {
+  display: flex;
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+  padding: var(--sp-4) var(--sp-5);
+  border: 1px dashed var(--accent);
+  border-radius: var(--radius-card);
+  background: rgba(201, 165, 92, 0.08);
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--navy);
+}
+
+.note-box::before {
+  content: "*";
+  font-family: var(--font-num);
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+/* 5-6. 차별화 4요소 — 아이콘 + 두 줄 카피, 세로 구분선 */
+.strength-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: var(--sp-6);
+}
+
+.strength-row__item {
+  padding: var(--sp-5) var(--sp-4);
+  text-align: center;
+  border-left: 1px solid var(--line-soft);
+}
+
+.strength-row__item:first-child {
+  border-left: 0;
+}
+
+.strength-row__icon {
+  display: inline-flex;
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(201, 165, 92, 0.14);
+  color: var(--accent-deep);
+  margin-bottom: var(--sp-3);
+}
+
+.strength-row__icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.strength-row__item p {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--navy-deep);
+}
+
+@media (max-width: 900px) {
+  .strength-row { grid-template-columns: repeat(2, 1fr); row-gap: var(--sp-4); }
+  .strength-row__item:nth-child(3) { border-left: 0; }
+}
+@media (max-width: 480px) {
+  .strength-row { grid-template-columns: 1fr; }
+  .strength-row__item { border-left: 0; border-top: 1px solid var(--line-soft); }
+  .strength-row__item:first-child { border-top: 0; }
+}
+
+/* 5-7. 행정심판 vs 행정소송 비교 카드 */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+  margin-top: var(--sp-6);
+}
+
+.compare-card {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  background: var(--paper);
+  box-shadow: var(--shadow-sm);
+}
+
+.compare-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--navy-deep);
+  color: var(--paper);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+}
+
+.compare-card--court .compare-card__head {
+  background: var(--primary);
+}
+
+.compare-card__head svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--accent-light);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.compare-card dl {
+  margin: 0;
+}
+
+.compare-card dl > div {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-5);
+  border-top: 1px solid var(--line-soft);
+  font-size: var(--fs-sm);
+}
+
+.compare-card dl > div:first-child {
+  border-top: 0;
+}
+
+.compare-card dt {
+  font-weight: 700;
+  color: var(--navy-deep);
+}
+
+.compare-card dd {
+  margin: 0;
+  color: var(--navy);
+}
+
+@media (max-width: 760px) {
+  .compare-grid { grid-template-columns: 1fr; }
+}
+
+/* 5-8. 업무 페이지 마무리 밴드 — 사진 + 카피 + CTA */
+.closing {
+  position: relative;
+  overflow: hidden;
+  background: var(--ghost-soft);
+}
+
+.closing__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--sp-8);
+  align-items: center;
+}
+
+.closing__text .eyebrow {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.22em;
+  color: var(--accent-deep);
+  margin-bottom: var(--sp-3);
+}
+
+.closing__text h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.25;
+  margin-bottom: var(--sp-4);
+}
+
+.closing__text h2 em {
+  font-style: normal;
+  color: var(--primary);
+}
+
+.closing__text p {
+  color: var(--navy);
+  line-height: var(--lh-loose);
+  margin-bottom: var(--sp-5);
+}
+
+.closing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.closing__media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.closing__media img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .closing__grid { grid-template-columns: 1fr; }
+}
+
+/* 5-9. 숫자 하이라이트 (의료사고 손해배상 항목 등) */
+.num-badge {
+  display: inline-block;
+  font-family: var(--font-num);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  color: var(--accent-deep);
+  margin-bottom: var(--sp-2);
+}
+
+/* ==========================================================================
+   6. 인덱스 — WHY 카드 배경 사진 교체 + Today 상담현황 배지 색
+   ========================================================================== */
+.why__card--law::before { background-image: url("../../img/field-01.png"); }
+.why__card--equip::before { background-image: url("../../img/field-05.png"); }
+.why__card--security::before { background-image: url("../../img/field-07.png"); }
+.why__card--record::before { background-image: url("../../img/field-08.png"); }
+
+.today__status-badge--criminal { background: rgba(18, 60, 120, 0.14); color: var(--primary); }
+.today__status-badge--license { background: rgba(201, 165, 92, 0.18); color: var(--accent-deep); }
+.today__status-badge--adminlaw { background: rgba(47, 111, 82, 0.14); color: var(--success); }
+.today__status-badge--malpractice { background: rgba(179, 67, 43, 0.14); color: var(--danger); }
+
+/* ==========================================================================
+   7. 상담·오시는 길 — 교통 안내 카드
+   ========================================================================== */
+.transit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+  margin-top: var(--sp-6);
+}
+
+.transit-card {
+  padding: var(--sp-5) var(--sp-6);
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.transit-card h4 {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-h4);
+  margin-bottom: var(--sp-3);
+}
+
+.transit-card h4 svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--accent-deep);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.transit-card p {
+  font-size: var(--fs-sm);
+  color: var(--navy);
+  line-height: 1.7;
+}
+
+.transit-card dl {
+  margin: var(--sp-3) 0 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--sp-1) var(--sp-3);
+  font-size: var(--fs-sm);
+}
+
+.transit-card dt {
+  font-weight: 700;
+}
+
+.transit-card dt.c-green { color: #2f7d4f; }
+.transit-card dt.c-blue { color: #1f5fbf; }
+.transit-card dt.c-red { color: #c0392b; }
+
+.transit-card dd {
+  margin: 0;
+  color: var(--navy);
+}
+
+@media (max-width: 900px) {
+  .transit-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   8. 메가메뉴 hover 후 안 닫히는 문제 수정
+      .megamenu__scrim(전체화면 딤)이 .gnb__item 자손이라 마우스가 본문 어디에
+      있어도 항목 hover가 유지되어 mouseleave가 발생하지 않았다. 딤은 장식이므로
+      포인터를 통과시켜 본문 위로 나가면 바로 닫히게 한다.
+   ========================================================================== */
+.megamenu__scrim {
+  pointer-events: none;
+}

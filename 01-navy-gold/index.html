@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>법무법인 집현전 의료전문센터 | 의료인의 법률문제를 함께 살핍니다</title>
+<meta name="description" content="법무법인 집현전 의료전문센터는 의료인의 형사사건, 면허와 행정처분, 의료사고 등 의료와 관련된 다양한 법률문제를 의료현장의 특수성을 고려하여 해결합니다." />
+<meta property="og:title" content="법무법인 집현전 의료전문센터" />
+<meta property="og:description" content="의학적 사실과 법률적 쟁점을 함께 살피는 의료 법률 파트너." />
+<meta property="og:image" content="img/og-thumb.png" />
+<meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css" />
+<link rel="stylesheet" href="assets/css/pages.css" />
+<link rel="stylesheet" href="assets/css/jhj.css" />
+
+<!-- CSS 링크 직후 인라인 동기 스크립트: FOUC 차단(.js 스코프 리빌용). async/defer 금지 -->
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<div id="demo-bar"></div>
+
+<div id="site-header">
+  <div class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">
+        법무법인 집현전<small>의료전문센터</small>
+      </a>
+      <nav class="nav-seed" aria-label="기본 메뉴(씨앗)">
+        <a href="index.html">홈</a>
+        <a href="contact.html">상담신청</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<noscript>
+  <nav class="noscript-nav" aria-label="JavaScript 비활성 시 내비게이션">
+    <a href="index.html">홈</a>
+    <a href="about.html">법무법인 소개</a>
+    <a href="criminal.html">의료법 위반</a>
+    <a href="license.html">의사면허 재교부</a>
+    <a href="admin-law.html">행정심판·행정소송</a>
+    <a href="malpractice.html">의료사고 손해배상</a>
+    <a href="contact.html">상담·오시는 길</a>
+    <a href="privacy.html">개인정보처리방침</a>
+  </nav>
+</noscript>
+
+<main id="main" data-page="home">
+
+  <!-- ==================================================================
+       1. #hero-intro — 고정 인트로 히어로(첫 휠에 접힘) + 정지 이미지 켄번즈
+       ================================================================== -->
+  <section id="hero-intro" class="hero-intro" data-header-theme="dark">
+    <div class="hero-intro__media" aria-hidden="true">
+      <img class="hero-intro__video hero-intro__video--still" src="img/hero-poster.png" width="1344" height="752" alt="" />
+      <div class="hero-intro__scrim"></div>
+    </div>
+
+    <div class="hero-intro__content">
+      <p class="hero-intro__eyebrow font-display">JIPHYEONJEON MEDICAL LAW CENTER</p>
+      <h1 class="hero-intro__title hero-intro__title--ko">의료인의 법률문제를<br><em>함께 살핍니다</em></h1>
+      <p class="hero-intro__slogan">법무법인 집현전 의료전문센터는 의료인의 형사사건, 면허와 행정처분, 의료사고 등 의료와 관련된 다양한 법률문제를 의료현장의 특수성을 고려하여 해결합니다.</p>
+
+      <form class="hero-search" action="contact.html" method="get">
+        <div class="hero-search__field">
+          <svg class="hero-search__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="10.5" cy="10.5" r="6.5" /><path d="M15.5 15.5L21 21" />
+          </svg>
+          <input class="hero-search__input" type="text" name="q" placeholder="사건의 현재 단계부터 알려주십시오" aria-label="상담 내용 입력" autocomplete="off" />
+          <button class="hero-search__submit" type="submit">상담 연결 →</button>
+        </div>
+        <div class="hero-search__chips">
+          <span class="hero-search__chips-label">주요 업무</span>
+          <a class="hero-search__chip" href="criminal.html">의료법 위반</a>
+          <a class="hero-search__chip" href="license.html">의사면허 재교부</a>
+          <a class="hero-search__chip" href="admin-law.html">행정심판·행정소송</a>
+          <a class="hero-search__chip" href="malpractice.html">의료사고 손해배상</a>
+        </div>
+      </form>
+    </div>
+
+    <a href="#today" class="hero-intro__scroll" data-hero-scroll aria-label="다음 섹션으로 스크롤">
+      <span class="hero-intro__scroll-line" aria-hidden="true"></span>
+      <span class="hero-intro__scroll-text">SCROLL</span>
+    </a>
+  </section>
+
+  <!-- ==================================================================
+       2. #today — 소식 & 상담 접수 현황: 탭 + 마퀴 2레인
+       ================================================================== -->
+  <section id="today" class="today section section--light" data-header-theme="light">
+    <p class="ghost-type ghost-type--md ghost-type--center today__ghost" aria-hidden="true">MEDICAL LAW</p>
+
+    <div class="container today__container">
+      <div class="section-title section-title--center">
+        <span class="eyebrow">JIPHYEONJEON TODAY</span>
+        <h2>소식 &amp; 상담 접수 현황</h2>
+      </div>
+
+      <div class="today__tabs" data-filter-tabs role="tablist" aria-label="소식 필터">
+        <button type="button" class="today__tab is-active" data-filter="all" aria-selected="true">전체</button>
+        <button type="button" class="today__tab" data-filter="news" aria-selected="false">소식</button>
+        <button type="button" class="today__tab" data-filter="status" aria-selected="false">상담현황</button>
+      </div>
+
+      <div class="today__lane" data-filter-panel="all news">
+        <span class="today__lane-label font-display">NEWS</span>
+        <div class="marquee-viewport today__marquee-vp" data-marquee-viewport data-marquee-speed="55">
+          <ul class="marquee-track today__track" data-marquee-track>
+            <li class="today__card">
+              <span class="badge badge--trust">안내</span>
+              <h4>의료전문센터 홈페이지를 새롭게 열었습니다</h4>
+              <span class="today__card-date">2026.10.29</span>
+            </li>
+            <li class="today__card">
+              <span class="badge badge--accent">칼럼</span>
+              <h4>의료광고 사전심의, 비급여 항목 광고에서 자주 놓치는 것</h4>
+              <span class="today__card-date">2026.10.14</span>
+            </li>
+            <li class="today__card">
+              <span class="badge badge--trust">안내</span>
+              <h4>면허 취소 후 재교부 신청, 결격사유 해소 시점 확인하기</h4>
+              <span class="today__card-date">2026.09.30</span>
+            </li>
+            <li class="today__card">
+              <span class="badge badge--accent">칼럼</span>
+              <h4>업무정지 처분 사전통지를 받았을 때 가장 먼저 할 일</h4>
+              <span class="today__card-date">2026.09.12</span>
+            </li>
+            <li class="today__card">
+              <span class="badge badge--trust">안내</span>
+              <h4>진료기록부 보관 의무, 기간과 방식 다시 확인하기</h4>
+              <span class="today__card-date">2026.08.27</span>
+            </li>
+            <li class="today__card">
+              <span class="badge badge--accent">칼럼</span>
+              <h4>의료분쟁 조정 신청 전 검토해야 할 자료</h4>
+              <span class="today__card-date">2026.08.05</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="today__lane today__lane--status" data-filter-panel="all status">
+        <span class="today__lane-label font-display">CONSULT STATUS</span>
+        <div class="marquee-viewport today__marquee-vp" data-marquee-viewport data-marquee-speed="42" data-marquee-direction="-1">
+          <ul class="marquee-track today__track today__track--status" data-marquee-track>
+            <li class="today__status-card">
+              <span class="badge today__status-badge today__status-badge--criminal">의료법 위반</span>
+              <span class="today__status-name">김○○ 원장<small>내과 · 서울 강남</small></span>
+              <span class="today__status-region">수사 단계</span>
+              <span class="badge today__status-tag--received">접수</span>
+            </li>
+            <li class="today__status-card">
+              <span class="badge today__status-badge today__status-badge--license">면허 재교부</span>
+              <span class="today__status-name">이○○ 원장<small>정형외과 · 경기 분당</small></span>
+              <span class="today__status-region">서류 준비</span>
+              <span class="badge today__status-tag--progress">상담중</span>
+            </li>
+            <li class="today__status-card">
+              <span class="badge today__status-badge today__status-badge--adminlaw">행정심판</span>
+              <span class="today__status-name">박○○ 원장<small>피부과 · 서울 서초</small></span>
+              <span class="today__status-region">업무정지</span>
+              <span class="badge today__status-tag--done">완료</span>
+            </li>
+            <li class="today__status-card">
+              <span class="badge today__status-badge today__status-badge--malpractice">의료사고</span>
+              <span class="today__status-name">최○○<small>환자 측 · 인천</small></span>
+              <span class="today__status-region">손해배상</span>
+              <span class="badge today__status-tag--received">접수</span>
+            </li>
+            <li class="today__status-card">
+              <span class="badge today__status-badge today__status-badge--criminal">의료광고</span>
+              <span class="today__status-name">정○○ 원장<small>치과 · 서울 마포</small></span>
+              <span class="today__status-region">사전통지</span>
+              <span class="badge today__status-tag--progress">상담중</span>
+            </li>
+            <li class="today__status-card">
+              <span class="badge today__status-badge today__status-badge--adminlaw">행정소송</span>
+              <span class="today__status-name">강○○ 원장<small>한의원 · 대전</small></span>
+              <span class="today__status-region">면허정지</span>
+              <span class="badge today__status-tag--received">접수</span>
+            </li>
+            <li class="today__status-card">
+              <span class="badge today__status-badge today__status-badge--license">면허 재교부</span>
+              <span class="today__status-name">조○○<small>의사 · 부산</small></span>
+              <span class="today__status-region">심사 대응</span>
+              <span class="badge today__status-tag--done">완료</span>
+            </li>
+            <li class="today__status-card">
+              <span class="badge today__status-badge today__status-badge--malpractice">의료분쟁</span>
+              <span class="today__status-name">윤○○<small>환자 측 · 광주</small></span>
+              <span class="today__status-region">조정 대응</span>
+              <span class="badge today__status-tag--progress">상담중</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       3. #info-client — 배너 Swiper + 퀵링크 카드 4
+       ================================================================== -->
+  <section id="info-client" class="info-client section section--alt" data-header-theme="light">
+    <div class="container">
+      <div class="section-title section-title--center">
+        <span class="eyebrow">INFORMATION</span>
+        <h2>Information for Clients</h2>
+      </div>
+
+      <div class="info-client__grid">
+        <div class="info-client__banner">
+          <div class="swiper" data-swiper="info-banner">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide info-client__slide">
+                <img src="img/banner-01.png" width="1024" height="688" alt="변호사와 의사가 진료기록을 함께 검토하는 상담 장면" loading="lazy" />
+                <div class="info-client__slide-copy">
+                  <p>의학적 사실과 법률적 쟁점을 함께 살핍니다</p>
+                  <a href="about.html#intro">법무법인 소개 →</a>
+                </div>
+              </div>
+              <div class="swiper-slide info-client__slide">
+                <img src="img/banner-02.png" width="1024" height="688" alt="이른 아침 병원 복도와 접수대 위의 서류" loading="lazy" />
+                <div class="info-client__slide-copy">
+                  <p>사건의 초기 단계부터 함께 검토합니다</p>
+                  <a href="criminal.html#process">대응 절차 보기 →</a>
+                </div>
+              </div>
+              <div class="swiper-slide info-client__slide">
+                <img src="img/banner-03.png" width="1024" height="688" alt="두꺼운 서면에 색인을 붙이며 정리하는 손" loading="lazy" />
+                <div class="info-client__slide-copy">
+                  <p>수사·재판·행정절차 전 단계 대응</p>
+                  <a href="contact.html#contact-form">상담신청 바로가기 →</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <button type="button" class="swiper-button-prev" aria-label="이전 배너"></button>
+            <button type="button" class="swiper-button-next" aria-label="다음 배너"></button>
+          </div>
+        </div>
+
+        <div class="info-client__quick">
+          <a class="info-client__quick-card" href="criminal.html">
+            <span class="ico" aria-hidden="true">&#9878;</span>
+            <h3>의료법 위반</h3>
+            <p>의료법 위반 및 의료인 형사사건에 대한 수사·재판 단계별 대응</p>
+          </a>
+          <a class="info-client__quick-card" href="license.html">
+            <span class="ico" aria-hidden="true">&#128203;</span>
+            <h3>의사면허 재교부</h3>
+            <p>면허취소·정지 이후 의사면허 재교부와 관련된 법률 문제 검토 및 대응</p>
+          </a>
+          <a class="info-client__quick-card" href="admin-law.html">
+            <span class="ico" aria-hidden="true">&#127963;</span>
+            <h3>행정심판·행정소송</h3>
+            <p>의료인 및 의료기관에 대한 행정처분에 대한 행정심판·행정소송 대응</p>
+          </a>
+          <a class="info-client__quick-card" href="malpractice.html">
+            <span class="ico" aria-hidden="true">&#128737;</span>
+            <h3>의료사고 손해배상</h3>
+            <p>의료사고에 따른 손해배상 청구 및 분쟁 조정 대응</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       4. #why — WHY JIPHYEONJEON (핀+스크럽, 다크): 글자 리빌 + 호버 아코디언 카드 4
+       ================================================================== -->
+  <section id="why" class="why section section--dark" data-header-theme="dark">
+    <div class="why__pin">
+      <p class="ghost-type ghost-type--lg ghost-type--center why__ghost" id="why-ghost" aria-hidden="true">MEDICINE MEETS LAW</p>
+
+      <div class="container why__inner">
+        <div class="section-title section-title--center">
+          <span class="eyebrow">WHY JIPHYEONJEON</span>
+          <h2>의료사건에 대한 종합적인 대응</h2>
+        </div>
+
+        <div class="why__accordion swiper" data-swiper="why-cards">
+          <div class="why__accordion-track swiper-wrapper">
+            <div class="why__card why__card--law swiper-slide" tabindex="0">
+              <div class="why__card-face">
+                <span class="why__card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+                </span>
+                <h3 class="font-display">SPECIALTY</h3>
+                <p class="why__card-tagline">형사·민사·행정 절차의 연결</p>
+              </div>
+              <div class="why__card-detail">
+                <p>의료 관련 사건은 형사·민사·행정 절차가 서로 연결되어 진행되는 경우가 많습니다. 집현전은 사건의 사실관계와 관련 자료를 면밀히 검토하고, 각 절차가 미칠 수 있는 영향을 함께 살펴 체계적인 대응 방향을 수립합니다.</p>
+                <div class="why__card-tags">
+                  <span>#형사처벌</span><span>#행정처분</span><span>#면허불이익</span>
+                </div>
+                <span class="why__card-count">전 절차 연계 검토</span>
+              </div>
+            </div>
+
+            <div class="why__card why__card--equip swiper-slide" tabindex="0">
+              <div class="why__card-face">
+                <span class="why__card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+                </span>
+                <h3 class="font-display">PROFESSIONAL</h3>
+                <p class="why__card-tagline">의료인의 권리와 전문성 중심</p>
+              </div>
+              <div class="why__card-detail">
+                <p>의료행위는 환자의 상태와 당시의 진료환경, 의료적 판단 등 여러 요소를 종합적으로 고려해야 합니다. 집현전은 의료현장의 특수성을 바탕으로 법률적 쟁점을 구체적으로 검토하고, 의료인의 전문적 판단과 권리가 적절히 반영될 수 있도록 대응합니다.</p>
+                <div class="why__card-tags">
+                  <span>#진료환경</span><span>#의료적판단</span><span>#권리보호</span>
+                </div>
+                <span class="why__card-count">의료현장 특수성 반영</span>
+              </div>
+            </div>
+
+            <div class="why__card why__card--security swiper-slide" tabindex="0">
+              <div class="why__card-face">
+                <span class="why__card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </span>
+                <h3 class="font-display">EARLY RESPONSE</h3>
+                <p class="why__card-tagline">초기 대응이 결과를 좌우</p>
+              </div>
+              <div class="why__card-detail">
+                <p>사실관계와 법리 검토가 복잡하고, 형사처벌과 행정처분이 함께 이루어질 수 있어 신속하고 정확한 대응이 중요합니다. 사건의 초기 단계부터 필요한 법률적 대응을 함께 검토합니다.</p>
+                <div class="why__card-tags">
+                  <span>#초기상담</span><span>#사실관계분석</span><span>#의견서</span>
+                </div>
+                <span class="why__card-count">수사·재판·행정 전 단계</span>
+              </div>
+            </div>
+
+            <div class="why__card why__card--record swiper-slide" tabindex="0">
+              <div class="why__card-face">
+                <span class="why__card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.5c2.8 0 5 2 5 5"/></svg>
+                </span>
+                <h3 class="font-display">PARTNER</h3>
+                <p class="why__card-tagline">의료인을 위한 전문적인 법률 파트너</p>
+              </div>
+              <div class="why__card-detail">
+                <p>법무법인 집현전 의료전문센터는 의료인과 의료기관이 직면한 법률문제를 정확하게 파악하고, 의료현장에 대한 이해와 법률 전문성을 바탕으로 각 사건의 특성에 맞는 해결 방향을 제시합니다.</p>
+                <div class="why__card-tags">
+                  <span>#검사출신</span><span>#판사출신</span><span>#의료경영석사</span>
+                </div>
+                <span class="why__card-count"><span class="stat-num" data-count="10" data-suffix="인">0</span>의 변호사</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       5. #fields — 주요 업무 8분야 대형 카드 캐러셀
+       ================================================================== -->
+  <section id="fields" class="fields section section--light" data-header-theme="light">
+    <div class="container">
+      <div class="section-title section-title--center">
+        <span class="eyebrow">PRACTICE AREAS</span>
+        <h2>주요 업무</h2>
+      </div>
+      <p class="section-lead">의료인과 의료기관에서 발생하는 다양한 법률문제를 다룹니다.</p>
+    </div>
+
+    <div class="swiper fields__swiper" data-swiper="fields">
+      <div class="swiper-wrapper">
+        <a class="swiper-slide fields__card" href="criminal.html#types">
+          <img src="img/field-01.png" width="896" height="1120" alt="청진기와 법전이 놓인 진료실 책상" loading="lazy" />
+          <div class="fields__card-body">
+            <span class="fields__label font-display">MEDICAL SERVICE ACT</span>
+            <h3>무면허 의료행위</h3>
+          </div>
+        </a>
+        <a class="swiper-slide fields__card" href="criminal.html#types">
+          <img src="img/field-02.png" width="896" height="1120" alt="저녁 무렵 소규모 의원 건물 외관" loading="lazy" />
+          <div class="fields__card-body">
+            <span class="fields__label font-display">INSTITUTION</span>
+            <h3>의료기관 개설·운영 위반</h3>
+          </div>
+        </a>
+        <a class="swiper-slide fields__card" href="criminal.html#types">
+          <img src="img/field-03.png" width="896" height="1120" alt="스마트폰과 태블릿 위의 돋보기" loading="lazy" />
+          <div class="fields__card-body">
+            <span class="fields__label font-display">ADVERTISING</span>
+            <h3>의료광고 관련 위반</h3>
+          </div>
+        </a>
+        <a class="swiper-slide fields__card" href="criminal.html#types">
+          <img src="img/field-04.png" width="896" height="1120" alt="진료기록 차트와 펜" loading="lazy" />
+          <div class="fields__card-body">
+            <span class="fields__label font-display">MEDICAL RECORDS</span>
+            <h3>진료기록·설명의무 위반</h3>
+          </div>
+        </a>
+        <a class="swiper-slide fields__card" href="license.html">
+          <img src="img/field-05.png" width="896" height="1120" alt="금색 인장이 찍힌 증서와 만년필" loading="lazy" />
+          <div class="fields__card-body">
+            <span class="fields__label font-display">LICENSE</span>
+            <h3>의사면허 재교부</h3>
+          </div>
+        </a>
+        <a class="swiper-slide fields__card" href="admin-law.html">
+          <img src="img/field-06.png" width="896" height="1120" alt="행정기관 건물의 석조 기둥" loading="lazy" />
+          <div class="fields__card-body">
+            <span class="fields__label font-display">ADMINISTRATIVE APPEAL</span>
+            <h3>행정심판</h3>
+          </div>
+        </a>
+        <a class="swiper-slide fields__card" href="admin-law.html">
+          <img src="img/field-07.png" width="896" height="1120" alt="법정 책상 위의 의사봉" loading="lazy" />
+          <div class="fields__card-body">
+            <span class="fields__label font-display">ADMINISTRATIVE LITIGATION</span>
+            <h3>행정소송</h3>
+          </div>
+        </a>
+        <a class="swiper-slide fields__card" href="malpractice.html">
+          <img src="img/field-08.png" width="896" height="1120" alt="아침 햇살이 드는 빈 병실" loading="lazy" />
+          <div class="fields__card-body">
+            <span class="fields__label font-display">MALPRACTICE</span>
+            <h3>의료사고 손해배상</h3>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-pagination fields__pagination"></div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       6. #insight — 핀+2열 패럴랙스(다크): PROCESS 5단계 / STRENGTH
+       ================================================================== -->
+  <section id="insight" class="insight section section--navy" data-header-theme="dark">
+    <div class="insight__pin">
+      <div class="insight__bg" style="background-image:url('img/insight-night.png')" aria-hidden="true"></div>
+      <div class="insight__scrim" aria-hidden="true"></div>
+      <p class="ghost-type ghost-type--md ghost-type--br insight__ghost" aria-hidden="true">INSIGHT</p>
+
+      <div class="container insight__inner">
+        <div class="section-title section-title--center">
+          <span class="eyebrow">JIPHYEONJEON INSIGHT</span>
+          <h2>절차와 전문성의 기록</h2>
+        </div>
+
+        <div class="insight__feed">
+          <div class="insight__col insight__col--process" data-insight-col data-insight-speed="0.7">
+            <span class="insight__col-label font-display">PROCESS</span>
+            <div class="card card--glass insight__card">
+              <span class="badge badge--trust">STEP 01</span>
+              <h4>초기 상담</h4>
+              <p>사건 개요 파악 및 법률 검토 방향 설정. 사건의 현재 단계부터 알려주십시오.</p>
+            </div>
+            <div class="card card--glass insight__card">
+              <span class="badge badge--trust">STEP 02</span>
+              <h4>사실관계 분석</h4>
+              <p>진료기록 등 관련 자료 검토 및 쟁점 정리.</p>
+            </div>
+            <div class="card card--glass insight__card">
+              <span class="badge badge--trust">STEP 03</span>
+              <h4>대응 전략 수립</h4>
+              <p>형사·행정 절차에 맞춘 맞춤형 전략 마련.</p>
+            </div>
+            <div class="card card--glass insight__card">
+              <span class="badge badge--trust">STEP 04</span>
+              <h4>수사·재판·행정 절차 대응</h4>
+              <p>각 단계별 대응 및 의견서 제출.</p>
+            </div>
+            <div class="card card--glass insight__card">
+              <span class="badge badge--trust">STEP 05</span>
+              <h4>사후 관리</h4>
+              <p>처분 결과에 따른 추가 대응 및 자문.</p>
+              <a class="insight__card-more" href="criminal.html#process">대응 절차 전체보기 →</a>
+            </div>
+          </div>
+
+          <div class="insight__col insight__col--proof" data-insight-col data-insight-speed="1.15">
+            <span class="insight__col-label font-display">STRENGTH</span>
+            <div class="card card--glass insight__card">
+              <span class="badge badge--accent">구성</span>
+              <h4>검사·판사 출신 변호사</h4>
+              <p>16년 검사 재직 경력과 서울형사·민사지방법원 판사 경력의 변호사가 사건을 함께 봅니다.</p>
+            </div>
+            <div class="card card--glass insight__card">
+              <span class="badge badge--accent">의료 이해</span>
+              <h4>의료경영학 석사 · 검진센터 운영 경험</h4>
+              <p>의료기관 운영 실무를 아는 변호사가 의료현장의 특수성을 법률 쟁점에 반영합니다.</p>
+            </div>
+            <div class="card card--glass insight__card">
+              <span class="badge badge--accent">행정</span>
+              <h4>행정법원 소송구조 · 행정기관 법무 경력</h4>
+              <p>조달청·방위사업청 법무실, 법원행정처 근무 경력으로 행정절차의 흐름을 정확히 읽습니다.</p>
+            </div>
+            <div class="card card--glass insight__card">
+              <span class="badge badge--accent">접근</span>
+              <h4>서초역 2번출구 도보 3분</h4>
+              <p>서울중앙지방법원·검찰청과 가까운 서초동 사무실에서 방문 상담을 진행합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       7. #people — 집현전의 변호사 10인
+       ================================================================== -->
+  <section id="people" class="people section section--light" data-header-theme="light">
+    <div class="container">
+      <div class="section-title section-title--center">
+        <span class="eyebrow">ATTORNEYS</span>
+        <h2>사건의 본질을 정확히 파악하는 전문 변호사들</h2>
+      </div>
+      <p class="section-lead">법무법인 집현전 의료전문센터는 다양한 분야의 실무 경험과 전문성을 갖춘 변호사들이 의료인의 법률문제를 함께 해결합니다.</p>
+
+      <div class="people__grid people__grid--ten">
+        <a class="people__card reveal" data-delay="0" href="about.html#attorneys">
+          <img src="img/lawyers/kim-yongho.jpg" width="415" height="500" alt="김용호 대표변호사" loading="lazy" />
+          <div class="people__card-body"><span class="badge badge--bronze">대표변호사</span><h3>김용호</h3></div>
+        </a>
+        <a class="people__card reveal" data-delay="60" href="about.html#attorneys">
+          <img src="img/lawyers/bong-mansu.jpg" width="415" height="500" alt="봉만수 대표변호사" loading="lazy" />
+          <div class="people__card-body"><span class="badge badge--bronze">대표변호사</span><h3>봉만수</h3></div>
+        </a>
+        <a class="people__card reveal" data-delay="120" href="about.html#attorneys">
+          <img src="img/lawyers/won-heejung.jpg" width="415" height="500" alt="원희정 변호사" loading="lazy" />
+          <div class="people__card-body"><span class="badge badge--trust">변호사</span><h3>원희정</h3></div>
+        </a>
+        <a class="people__card reveal" data-delay="180" href="about.html#attorneys">
+          <img src="img/lawyers/lee-hyojae.png" width="415" height="500" alt="이효재 변호사" loading="lazy" />
+          <div class="people__card-body"><span class="badge badge--trust">변호사</span><h3>이효재</h3></div>
+        </a>
+        <a class="people__card reveal" data-delay="240" href="about.html#attorneys">
+          <img src="img/lawyers/lee-jongpil.jpg" width="415" height="500" alt="이종필 변호사" loading="lazy" />
+          <div class="people__card-body"><span class="badge badge--trust">변호사</span><h3>이종필</h3></div>
+        </a>
+        <a class="people__card reveal" data-delay="0" href="about.html#attorneys">
+          <img src="img/lawyers/lee-taeyoung.jpg" width="415" height="500" alt="이태영 변호사" loading="lazy" />
+          <div class="people__card-body"><span class="badge badge--trust">변호사</span><h3>이태영</h3></div>
+        </a>
+        <a class="people__card reveal" data-delay="60" href="about.html#attorneys">
+          <img src="img/lawyers/yoon-jaesik.jpg" width="415" height="500" alt="윤재식 변호사" loading="lazy" />
+          <div class="people__card-body"><span class="badge badge--trust">변호사</span><h3>윤재식</h3></div>
+        </a>
+        <a class="people__card reveal" data-delay="120" href="about.html#attorneys">
+          <img src="img/lawyers/lim-jiwoon.jpg" width="415" height="500" alt="임지운 변호사" loading="lazy" />
+          <div class="people__card-body"><span class="badge badge--trust">변호사</span><h3>임지운</h3></div>
+        </a>
+        <a class="people__card reveal" data-delay="180" href="about.html#attorneys">
+          <img src="img/lawyers/lee-eunchang.png" width="415" height="500" alt="이은창 변호사" loading="lazy" />
+          <div class="people__card-body"><span class="badge badge--trust">변호사</span><h3>이은창</h3></div>
+        </a>
+        <a class="people__card reveal" data-delay="240" href="about.html#attorneys">
+          <img src="img/lawyers/hwang-kiseok.jpg" width="415" height="500" alt="황기석 변호사" loading="lazy" />
+          <div class="people__card-body"><span class="badge badge--trust">변호사</span><h3>황기석</h3></div>
+        </a>
+      </div>
+
+      <div class="people__mission">
+        <div class="people__mission-figure reveal" data-delay="0">
+          <img src="img/justice.png" width="896" height="1120" alt="의료법 서적 뒤로 보이는 정의의 여신상" loading="lazy" />
+        </div>
+        <div class="people__mission-figure reveal" data-delay="80">
+          <img src="img/office-02.png" width="896" height="1120" alt="노트에 메모하는 변호사의 손" loading="lazy" />
+        </div>
+        <div class="people__mission-figure reveal" data-delay="160">
+          <img src="img/corridor.png" width="896" height="1120" alt="병원 복도를 걸어가는 의료진의 뒷모습" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       8. #cta-band — 푸터 위 상담 CTA 밴드
+       ================================================================== -->
+  <section id="cta-band" class="cta-band section section--tight section--navy">
+    <div class="container cta-band__inner">
+      <p class="cta-band__slogan font-display reveal" data-delay="0">의료인의 곁에서 끝까지 함께하는 법률 파트너</p>
+      <p class="cta-band__desc reveal" data-delay="80">방문 전 전화로 상담 가능 일정과 준비자료를 확인해 주십시오.</p>
+      <div class="cta-band__actions reveal" data-delay="160">
+        <a href="tel:025811045" class="btn btn--solid btn--lg">상담전화 02-581-1045</a>
+        <a href="contact.html#contact-form" class="btn btn--glass btn--lg">온라인 상담신청</a>
+        <a href="contact.html#location" class="btn btn--trust btn--lg">오시는 길 →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer">
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <div class="site-footer__brand">법무법인 집현전 의료전문센터<small>JIPHYEONJEON Medical Law Center</small></div>
+        <p>서울특별시 서초구 반포대로 106, 4층~5층(서초동, 태홍빌딩) · 사업자등록번호 264-81-25415</p>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>&copy; 2026 법무법인 집현전 의료전문센터. All rights reserved.</span>
+      <a href="privacy.html">개인정보처리방침</a>
+    </div>
+  </footer>
+</div>
+
+<div id="quickmenu"></div>
+
+<!-- 진입 공지 팝업 (index 전용, ui.js initNoticePopup() 대상) -->
+<div class="popup-overlay" id="notice-popup">
+  <div class="popup popup--notice" role="dialog" aria-modal="true" aria-labelledby="notice-popup-title">
+    <div class="popup__body">
+      <h3 class="popup__title" id="notice-popup-title">의료전문센터 홈페이지를 새롭게 열었습니다</h3>
+      <p>
+        의료인의 형사사건, 면허와 행정처분, 의료사고 등 의료 관련 법률문제를 전담합니다.
+        온라인 상담 접수는 현재 제공하지 않으며 전화(02-581-1045)로 문의하실 수 있습니다.
+      </p>
+    </div>
+    <div class="popup__footer">
+      <button type="button" data-popup-dismiss-today>오늘 하루 보지 않기</button>
+      <button type="button" class="popup__close" data-popup-close aria-label="닫기">닫기</button>
+    </div>
+  </div>
+</div>
+
+<!-- 스크립트 로드 순서: components → ui → reveal → vendor(gsap/ST/ScrollTo/lenis/swiper) → motion -->
+<script src="assets/js/components.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/reveal.js"></script>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/ScrollToPlugin.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/vendor/swiper-bundle.min.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/kb.js"></script>
+</body>
+</html>
