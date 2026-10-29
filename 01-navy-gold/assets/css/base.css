@@ -546,6 +546,10 @@ table {
 }
 
 .section-title--center {
+  /* inline-flex는 margin auto로 가운데 정렬되지 않아 왼쪽에 붙었다 — 블록 플렉스+fit-content로 가운데 */
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
   align-items: center;
   text-align: center;
   margin-inline: auto;

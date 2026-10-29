@@ -1098,3 +1098,7 @@ body.intro .site-header:not(.on) {
   .cta-band__actions { flex-direction: column; width: 100%; }
   .cta-band__actions .btn { width: 100%; }
 }
+
+/* 검색창 제거 뒤 히어로에는 주요 업무 바로가기 칩만 남긴다 */
+.hero-search--chips-only { max-width: 720px; margin-top: var(--sp-4); }
+.hero-search--chips-only .hero-search__chips { opacity: 1; transform: none; }
