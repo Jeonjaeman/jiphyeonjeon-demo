@@ -20,7 +20,7 @@
 
   var BRAND = {
     nameKo: "법무법인 집현전",
-    nameSub: "의료전문센터",
+    nameSub: "의료법률센터",
     nameEn: "JIPHYEONJEON Medical Law Center",
     symbol: "集",
     slogan: "의료인의 법률문제를 함께 살핍니다",
@@ -71,7 +71,8 @@
           title: "의료인 형사사건",
           links: [
             { label: "의료법 위반", href: "criminal.html" },
-            { label: "주요 위반 유형", href: "criminal.html#types" },
+            { label: "대표 위반 사례", href: "criminal.html#types" },
+            { label: "성공사례", href: "criminal.html#cases" },
             { label: "대응 절차", href: "criminal.html#process" },
           ],
         },
@@ -84,6 +85,7 @@
           title: "면허취소·정지·재교부",
           links: [
             { label: "의사면허 재교부", href: "license.html" },
+            { label: "재교부 성공사례", href: "license.html#cases" },
             { label: "행정심판·행정소송", href: "admin-law.html" },
           ],
         },

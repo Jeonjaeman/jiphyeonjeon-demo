@@ -74,7 +74,8 @@
         if (!segs) return;
         var frag = document.createDocumentFragment();
         segs.forEach(function (s, i) {
-          if (i) { var br = document.createElement("br"); br.className = "kb"; frag.appendChild(br); }
+          /* 줄나눔 br은 좁은 화면에서 숨기므로 앞에 공백을 둬 문장이 붙지 않게 한다 */
+          if (i) { frag.appendChild(document.createTextNode(" ")); var br = document.createElement("br"); br.className = "kb"; frag.appendChild(br); }
           frag.appendChild(document.createTextNode(s));
         });
         node.parentNode.replaceChild(frag, node);

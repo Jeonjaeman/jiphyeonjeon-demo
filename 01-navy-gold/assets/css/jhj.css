@@ -1,5 +1,5 @@
 /*!
- * jhj.css — 법무법인 집현전 의료전문센터 데모 1안(네이비·골드) 전용 추가 스타일
+ * jhj.css — 법무법인 집현전 의료법률센터 데모 1안(네이비·골드) 전용 추가 스타일
  * base/components/pages/subpages.css 디자인 시스템은 그대로 두고, 집현전 콘텐츠에만
  * 필요한 컴포넌트(로고 심볼·면책공고·변호사 카드·업무 페이지 블록)를 여기서 정의한다.
  * 토큰은 base.css v2 원본만 사용. CSS-first: 초기 hidden은 .js 스코프 안에서만.
@@ -816,4 +816,206 @@
    ========================================================================== */
 .megamenu__scrim {
   pointer-events: none;
+}
+
+/* ==========================================================================
+   고객 수정(11/02): 대표 위반 사례 그리드 + 성공사례 아코디언
+   ========================================================================== */
+.violation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+.violation-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-5);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border-soft);
+  border-radius: var(--radius-card);
+  transition: border-color var(--dur-base) var(--ease-standard),
+    background var(--dur-base) var(--ease-standard);
+}
+
+.violation-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+}
+
+.violation-card__cat {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(201, 165, 92, 0.16);
+  color: var(--accent-light);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+}
+
+.violation-card h4 {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--paper);
+}
+
+.case-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.case-acc {
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--dur-base) var(--ease-standard),
+    box-shadow var(--dur-base) var(--ease-standard);
+}
+
+.case-acc[open],
+.case-acc:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.case-acc__head {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: var(--sp-5);
+  padding: var(--sp-5) var(--sp-6);
+  cursor: pointer;
+  list-style: none;
+}
+
+.case-acc__head::-webkit-details-marker {
+  display: none;
+}
+
+.case-acc__num {
+  font-family: var(--font-num);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.case-acc__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.case-acc__tag {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.case-acc__title {
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--navy-deep);
+}
+
+.case-acc__kind {
+  font-size: 13px;
+  color: var(--ink-mute);
+}
+
+.case-acc__result {
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--navy-deep);
+  color: var(--accent-light);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.case-acc__icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.case-acc__icon::before,
+.case-acc__icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 2px;
+  background: var(--navy);
+  transform: translate(-50%, -50%);
+  transition: transform var(--dur-base) var(--ease-standard);
+}
+
+.case-acc__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.case-acc[open] .case-acc__icon::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.case-acc__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5) var(--sp-6);
+  padding: 0 var(--sp-6) var(--sp-6);
+  border-top: 1px solid var(--line-soft);
+  padding-top: var(--sp-5);
+}
+
+.case-acc__part h5 {
+  margin: 0 0 var(--sp-2);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.case-acc__part p {
+  margin: 0 0 var(--sp-2);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--navy);
+}
+
+.case-note {
+  max-width: 960px;
+  margin: var(--sp-6) auto 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-mute);
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .violation-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .violation-grid { grid-template-columns: 1fr; }
+  .case-acc__head {
+    grid-template-columns: auto 1fr auto;
+    gap: var(--sp-3);
+    padding: var(--sp-4);
+  }
+  .case-acc__result {
+    grid-column: 2 / 3;
+    justify-self: start;
+    font-size: 12px;
+  }
+  .case-acc__icon { grid-row: 1; grid-column: 3; }
+  .case-acc__body {
+    grid-template-columns: 1fr;
+    padding: var(--sp-4);
+  }
 }
