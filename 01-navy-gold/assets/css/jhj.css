@@ -1037,3 +1037,12 @@
   /* 첫 화면 영문 한 줄이 끝에서 한 단어만 넘어가지 않게 자간을 줄인다 */
   .hero-intro__eyebrow { font-size: 11px; letter-spacing: 0.14em; }
 }
+
+/* 중간 탭 내비: 가로 스크롤 영역 안에서 hover 밑줄(bottom:-1px)이 1px 넘쳐
+   세로 스크롤바가 생기던 문제. 밑줄을 영역 안으로 넣고 스크롤바를 숨긴다. */
+.tabnav > .container {
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.tabnav > .container::-webkit-scrollbar { display: none; }
+.tabnav__btn::after { bottom: 0; }
