@@ -680,10 +680,10 @@ body.intro .site-header:not(.on) {
   transform: scale(1.04);
 }
 
-.why__card--law::before { background-image: url("../../img/mission-03.png"); }
-.why__card--equip::before { background-image: url("../../img/equipment.png"); }
+.why__card--law::before { background-image: url("../../img/justice.png"); }
+.why__card--equip::before { background-image: url("../../img/still-law.png"); }
 .why__card--security::before { background-image: url("../../img/field-05.png"); }
-.why__card--record::before { background-image: url("../../img/office-interior.png"); }
+.why__card--record::before { background-image: url("../../img/office-01.png"); }
 
 .why__card-face {
   position: relative;
