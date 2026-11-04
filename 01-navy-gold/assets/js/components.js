@@ -28,7 +28,7 @@
     phone: "02-581-1045",
     phoneHref: "tel:025811045",
     fax: "02-581-1042",
-    email: "jhj5811028@daum.net",
+    email: "dkmin7892@naver.com",
     address: "서울특별시 서초구 반포대로 106, 4층~5층(서초동, 태홍빌딩)",
     regNo: "264-81-25415",
     ceo: "김용호, 봉만수",

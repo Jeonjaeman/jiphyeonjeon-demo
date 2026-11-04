@@ -83,7 +83,36 @@
     });
   }
 
+  /* 전화번호가 하이픈에서 끊겨 두 줄로 갈라지지 않게 번호 단위로 묶는다 */
+  var PHONE = /0\d{1,2}-\d{3,4}-\d{4}/g;
+  function keepPhones() {
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) {
+      var tag = n.parentNode.nodeName;
+      if (tag === "SCRIPT" || tag === "STYLE" || n.parentNode.classList.contains("nw")) continue;
+      PHONE.lastIndex = 0;
+      if (PHONE.test(n.nodeValue)) nodes.push(n);
+    }
+    nodes.forEach(function (node) {
+      var frag = document.createDocumentFragment(), text = node.nodeValue, last = 0, m;
+      PHONE.lastIndex = 0;
+      while ((m = PHONE.exec(text))) {
+        if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+        var span = document.createElement("span");
+        span.className = "nw";
+        span.style.whiteSpace = "nowrap";
+        span.textContent = m[0];
+        frag.appendChild(span);
+        last = m.index + m[0].length;
+      }
+      if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
+  function run() { apply(); keepPhones(); }
   window.JHJ_KB = apply;
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function () { apply(); });
-  else apply();
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
+  else run();
 })();

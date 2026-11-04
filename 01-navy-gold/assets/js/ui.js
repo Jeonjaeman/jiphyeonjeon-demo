@@ -227,6 +227,15 @@
       btn.addEventListener("click", close);
     });
 
+    /* 같은 페이지 앵커(about.html#intro 등)로 가는 링크는 페이지가 바뀌지 않아
+       오버레이가 열린 채 남는다. 링크를 누르면 먼저 닫는다. */
+    overlay.querySelectorAll("a[href]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        overlay.classList.remove("is-open");
+        unlockScroll();
+      });
+    });
+
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && overlay.classList.contains("is-open")) close();
     });
@@ -238,7 +247,9 @@
     if (!form) return;
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      window.location.href = "contact.html";
+      var q = form.querySelector("input[name='q']");
+      var text = q ? q.value.trim() : "";
+      window.location.href = "contact.html" + (text ? "?q=" + encodeURIComponent(text) : "") + "#contact-form";
     });
   }
 

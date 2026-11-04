@@ -137,6 +137,12 @@
     });
     consentInput.addEventListener("change", validateAll);
 
+    /* 헤더 상담창에서 적은 내용(?q=)을 상담 내용 칸에 이어 받는다 */
+    try {
+      var q = new URLSearchParams(window.location.search).get("q");
+      if (q && !bodyInput.value) bodyInput.value = q;
+    } catch (err) {}
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!validateAll()) {

@@ -53,17 +53,17 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  /* 고객 요청(11/04): 첫 화면을 더 밝게 */
+  filter: brightness(1.7) contrast(0.92) saturate(1.05);
 }
 
 .hero-intro__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 12, 36, 0.55) 0%,
-    rgba(0, 12, 36, 0.35) 40%,
-    rgba(0, 12, 36, 0.75) 100%
-  );
+  /* 글자 뒤만 살짝 눌러 가독성을 지키고 화면 전체는 밝게 둔다 */
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(0, 12, 36, 0.42) 0%, rgba(0, 12, 36, 0.18) 60%),
+    linear-gradient(180deg, rgba(0, 12, 36, 0.3) 0%, rgba(0, 12, 36, 0) 40%, rgba(0, 12, 36, 0.4) 100%);
 }
 
 .hero-intro__content {

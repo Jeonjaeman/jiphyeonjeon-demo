@@ -1019,3 +1019,21 @@
     padding: var(--sp-4);
   }
 }
+
+/* 고객 요청(11/04) 모바일 글자 넘침 정리 */
+@media (max-width: 768px) {
+  /* 배경 대형 영문 워터마크가 화면 밖으로 잘려 보여 모바일에서는 숨긴다 */
+  .ghost-type { display: none !important; }
+  /* 긴 사건 결과 배지가 카드 밖으로 나가지 않게 줄바꿈 */
+  .case-acc__titles { min-width: 0; }
+  .case-acc__result {
+    white-space: normal;
+    max-width: 100%;
+    line-height: 1.45;
+  }
+  /* 슬라이드 제목이 좌우 화살표 밑으로 깔리지 않게 화살표를 위로 */
+  .info-client .swiper-button-prev,
+  .info-client .swiper-button-next { top: 32px; margin-top: 0; }
+  /* 첫 화면 영문 한 줄이 끝에서 한 단어만 넘어가지 않게 자간을 줄인다 */
+  .hero-intro__eyebrow { font-size: 11px; letter-spacing: 0.14em; }
+}
