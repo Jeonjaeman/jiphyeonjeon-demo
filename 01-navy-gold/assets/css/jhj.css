@@ -1046,3 +1046,49 @@
 }
 .tabnav > .container::-webkit-scrollbar { display: none; }
 .tabnav__btn::after { bottom: 0; }
+
+/* 고객 요청(11/04 2차) 모바일 메뉴: 하위 화면이 about·services 두 개만 열리던 문제.
+   형사·면허·의료사고·상담 하위 화면도 같은 방식으로 밀려 들어오게 한다. */
+.mobile-nav[data-panel="criminal"] .mobile-nav__panel--secondary[data-drilldown-panel="criminal"],
+.mobile-nav[data-panel="license"] .mobile-nav__panel--secondary[data-drilldown-panel="license"],
+.mobile-nav[data-panel="malpractice"] .mobile-nav__panel--secondary[data-drilldown-panel="malpractice"],
+.mobile-nav[data-panel="contact"] .mobile-nav__panel--secondary[data-drilldown-panel="contact"] {
+  transform: translateX(0);
+}
+
+/* 고객 요청(11/04 2차) 모바일 상담 폼 입력: 아이폰 사파리는 변형(transform)·유리 흐림(backdrop-filter)이
+   걸린 상자 안의 입력칸을 눌러도 커서가 안 들어가는 경우가 있어 모바일에서는 둘 다 끄고 단색 배경으로 둔다. */
+@media (max-width: 1024px) {
+  .contact-form-card,
+  .contact-form-card.reveal {
+    transform: none !important;
+    opacity: 1 !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: #f3f5f9 !important; /* 글자색(남색)에 맞춘 밝은 단색 */
+  }
+  .contact-form-card input,
+  .contact-form-card textarea,
+  .contact-form-card select {
+    -webkit-user-select: text;
+    user-select: text;
+    touch-action: manipulation;
+    font-size: 16px; /* 16px 미만이면 아이폰이 입력할 때 화면을 확대한다 */
+  }
+}
+
+/* 고객 요청(11/04 2차) 상담 폼 "입력이 안 됨"의 실제 원인: 어두운 섹션의 흰 글자색이 흰 입력칸에 그대로 내려와
+   글자가 들어가도 보이지 않았다. 입력칸 글자는 항상 진한 남색으로. */
+.form-input,
+.form-textarea,
+.form-select {
+  color: var(--navy-deep);
+  -webkit-text-fill-color: var(--navy-deep);
+  caret-color: var(--navy-deep);
+}
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #8a93a3;
+  -webkit-text-fill-color: #8a93a3;
+  opacity: 1;
+}
